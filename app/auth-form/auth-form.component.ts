@@ -7,7 +7,7 @@ import { User } from './auth-form.interface';
   template: `
     <div>
       <form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
-        <ng-content></ng-content>
+        <h3>{{title}}</h3>
         <label>
           Email address
           <input type="email" name="email" ngModel>
@@ -24,7 +24,7 @@ import { User } from './auth-form.interface';
   `
 })
 export class AuthFormComponent {
-
+  title:string ="Login"
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
 
   onSubmit(value: User) {
